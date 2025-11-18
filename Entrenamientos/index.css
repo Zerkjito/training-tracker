@@ -1,0 +1,468 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Figtree, system-ui;
+  background-color: #232323;
+}
+
+.text {
+  padding: 0;
+  text-align: center;
+  color: white;
+}
+
+.secondary-title {
+  color: #e6dbdb;
+}
+
+#main-title {
+  font-size: 3.5rem;
+  margin-top: 25px;
+}
+
+#hero-section {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.hero-img {
+  margin-top: 25px;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  opacity: 0;
+  border-radius: 6px;
+  transition: opacity 1.25s ease;
+}
+
+.hero-img.show {
+  opacity: 1;
+}
+
+#secondary-title {
+  margin-top: 25px;
+  text-align: center;
+  color: rgba(255, 99, 71, 0.82);
+}
+
+#container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.btn-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  border: 1px solid transparent;
+  background-color: #94bd7c;
+  color: white;
+  padding: 15px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn-link {
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  line-height: normal;
+  margin-top: 10px;
+}
+
+.btn-cancel {
+  background-color: #b54343;
+}
+
+.grd-linear {
+  background-image: linear-gradient(
+    to right,
+    #243751,
+    #303d66 25%,
+    #442d55,
+    50%,
+    #4b2c45 75%,
+    #6d2869 100%
+  );
+  border-radius: 10px;
+  box-shadow: 0 4px 15px 8px rgba(36, 55, 81, 0.6);
+}
+
+#btn-sign-in,
+#btn-submit-register-form,
+#btn-submit-training-form {
+  background-color: transparent;
+  color: #94bd7c;
+  border: 2px solid #94bd7c;
+  font-size: inherit;
+}
+
+#btn-submit-register-form {
+  margin-top: 15px;
+}
+
+#btn-sign-in:hover,
+#btn-submit-register-form:hover,
+#btn-submit-training-form:hover {
+  background-color: #94bd7c;
+  color: white;
+}
+
+#btn-delete-data,
+#btn-cancel-new-tr {
+  background-color: #d25a5a;
+}
+
+#btn-cancel-new-tr:hover {
+  background-color: #e96565;
+}
+
+#btn-trainings-back,
+#btn-best-training-back,
+#btn-profile-back,
+#btn-total-km-back {
+  width: 100%;
+}
+
+#btn-my-profile {
+  background-color: #17b9a3;
+}
+
+#btn-my-profile:hover {
+  background-color: #16ac98;
+}
+
+#btn-delete-data:hover {
+  background-color: #b64e4e;
+}
+
+.btn:hover {
+  background-color: #84a770;
+}
+
+.btn-hidden {
+  visibility: hidden;
+}
+
+.confirmation {
+  color: #84a770;
+}
+
+.warning {
+  color: orange;
+}
+
+.goldenrod {
+  color: goldenrod;
+}
+
+.info {
+  color: #4279c1;
+}
+
+.msg {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  min-width: 200px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.008);
+  border-radius: 6px;
+  padding: 0 10px;
+  transition: opacity 0.5s ease, max-height 0.5s ease, margin 0.5s ease, padding 0.5s ease;
+  font-weight: bold;
+  margin: 0;
+}
+
+#msg-register-form-error {
+  margin: 0;
+  padding: 0;
+}
+
+#msg-register-form-error i,
+#msg-register-training-error i,
+#msg-logged-in-info i,
+#msg-trainings i,
+#msg-training-form-error i,
+#msg-best-training i {
+  margin-right: 6px;
+}
+
+#profile-secondary-title i {
+  margin-left: 6px;
+}
+
+.fa-solid.fa-ranking-star,
+.fa-solid.fa-person-running,
+.fa-solid.fa-square-poll-vertical {
+  margin-left: 6px;
+}
+
+#trainings-container,
+#best-training-container,
+#profile-container,
+#total-km-container {
+  margin-top: 20px;
+}
+
+.str {
+  font-weight: bold;
+}
+
+.msg-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.msg.show {
+  opacity: 1;
+  visibility: visible;
+  max-height: 50px;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+#trainings-list,
+#best-training-list {
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+#total-km-list {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.training-card {
+  background-color: #6d3ea777;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 10px 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  font-size: 1.2rem;
+}
+
+.profile-card {
+  background-color: #6d3ea777;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+  min-width: 500px;
+  min-height: 450px;
+  margin-bottom: 10px;
+}
+
+.training-card p {
+  padding-left: 20px;
+  line-height: 3rem;
+}
+
+#btn-back {
+  margin-top: 15px;
+}
+
+.nivel-malo {
+  color: #d25a5a;
+}
+.nivel-bueno {
+  color: orange;
+}
+.nivel-muy-bueno {
+  color: green;
+}
+
+.modal-delete,
+.modal-new-tr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-delete,
+.modal-new-tr {
+  height: 100%;
+}
+
+#modal-new-tr {
+  min-height: 550px;
+}
+
+.show-modal {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal-card {
+  background-color: #e8e5e5;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 60%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.modal-card p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.modal-buttons {
+  display: flex;
+}
+
+#modal-delete p,
+#modal-delete button,
+#modal-new-tr p,
+#modal-new-tr button {
+  padding: 15px;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+#modal-btn-confirm {
+  margin-top: 25px;
+  background-color: green;
+  color: white;
+  flex: 1;
+}
+
+#modal-btn-confirm:hover {
+  background-color: rgb(1, 100, 1);
+}
+
+#modal-btn-cancel:hover {
+  background-color: #c56c6c;
+}
+
+#modal-btn-confirm-tr {
+  width: 80%;
+  align-self: center;
+}
+
+#modal-btn-cancel {
+  background-color: #e07a7a;
+  color: white;
+  flex: 1;
+}
+
+.form-container {
+  width: 25%;
+  max-width: 800px;
+  margin-top: 15px;
+}
+
+.form {
+  font-size: 1.1rem;
+  min-height: 800px;
+  display: flex;
+  color: whitesmoke;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #6d3ea777;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease;
+}
+
+.terms-wrapper {
+  display: flex;
+  margin-top: 10px;
+  gap: 15px;
+}
+
+.terms-wrapper input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+#register-training-form {
+  min-height: 400px;
+}
+
+.form:hover {
+  box-shadow: 3px 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.form input:not([type='submit']) {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+}
+
+#slogan {
+  margin-top: 10px;
+  color: #decccc;
+}
+
+#training-secondary-title,
+#best-training-secondary-title,
+#total-km-secondary-title {
+  margin: 10px 0 25px 0;
+  font-size: 2rem;
+}
+
+#profile-secondary-title {
+  margin: 10px 0 25px 0;
+  font-size: 1.8rem;
+}

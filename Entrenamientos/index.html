@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Training Tracker Homepage</title>
+   <link rel="stylesheet" href="index.css">
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+</head>
+
+<body>
+
+   <h1 id="main-title" class="text">training<span class="grd-linear">Tracker </span></h1>
+
+   <h2 id="slogan" class="text">Todos tus registros deportivos en un mismo lugar <i class="fa-solid fa-heart-pulse"></i>
+   </h2>
+
+   <section id="hero-section">
+      <img id="hero-img" class="hero-img" alt="">
+
+   </section>
+   <h2 id="secondary-title"></h2>
+   <main>
+      <div id="container">
+         <div id="homepage-auth-btns-wrapper" class="btn-wrapper">
+            <button id="btn-register" class="btn">Registrarse</button>
+            <button id="btn-sign-in" class="btn">Iniciar sesión</button>
+         </div>
+
+         <div id="register-form-container" class="form-container hidden">
+            <form id="register-user-form" class="form">
+               <h2 class="secondary-title">Crear una cuenta nueva</h2>
+
+               <label for="nombre">Nombre *</label>
+               <input type="text" name="nombre" id="nombre">
+
+               <label for="apellidos">Apellidos (opcional)</label>
+               <input type="text" name="apellidos" id="apellidos">
+
+               <label for="correo">Correo *</label>
+               <input type="email" name="correo" id="correo">
+
+               <label for="altura">Altura (cm) *</label>
+               <input type="text" name="altura" id="altura">
+
+               <label for="peso">Peso (kg) *</label>
+               <input type="text" name="peso" id="peso">
+
+               <label for="edad">Edad *</label>
+               <input type="text" name="edad" id="edad">
+
+               <label for="numeroTlf">Número de teléfono *</label>
+               <input type="text" name="numeroTlf" id="numeroTlf">
+               <div class="terms-wrapper">
+                  <input type="checkbox" name="acceptTerms" id="acceptTerms">
+                  <label for="acceptTerms">Aceptar términos y condiciones</label>
+               </div>
+               <p id="msg-register-form-error" class="msg"></p>
+               <input id="btn-submit-register-form" type="submit" value="Registrarme" class="btn">
+            </form>
+            <a href="index.html" class="btn btn-link">Volver</a>
+         </div>
+
+         <div class="msg-container">
+            <p id="msg-logged-in-info" class="msg"></p>
+         </div>
+
+
+         <div id="btn-wrapper" class="btn-wrapper hidden">
+
+            <button id="btn-new-tr" class="btn">Nuevo entrenamiento</button>
+            <button id="btn-show-tr" class="btn">Mis entrenamientos</button>
+            <button id="btn-best-tr" class="btn">Mi mejor entrenamiento</button>
+            <button id="btn-total-km" class="btn">Mostrar total km recorridos</button>
+            <button id="btn-my-profile" class="btn">Ver mi perfil</button>
+            <button id="btn-delete-data" class="btn">Borrar mis registros</button>
+         </div>
+
+         <div id="add-training-form-container" class="form-container hidden">
+            <form id="register-training-form" class="form">
+               <h2 class="secondary-title">Crear un nuevo entrenamiento</h2>
+
+               <label for="distanciaRecorrida">Distancia recorrida (km)</label>
+               <input type="text" name="distanciaRecorrida" id="distanciaRecorrida">
+
+               <label for="duracion">Duración (hh:mm:ss)</label>
+               <input type="text" name="duracion" id="duracion">
+
+               <p id="msg-training-form-error" class="msg"></p>
+               <input id="btn-submit-training-form" type="submit" value="Registrar entrenamiento" class="btn">
+            </form>
+            <button id="btn-cancel-new-tr" class="btn btn-link">Cancelar</button>
+         </div>
+         <div id="trainings-container" class="trainings hidden">
+            <h2 id="training-secondary-title" class="secondary-title">Todos mis entrenamientos <i
+                  class="fa-solid fa-person-running"></i></h2>
+
+            <p id="msg-trainings" class="msg"></p>
+            <div id="trainings-list"></div>
+            <button id="btn-trainings-back" class="btn">Volver</button>
+         </div>
+         <div id="best-training-container" class="trainings hidden">
+            <h2 id="best-training-secondary-title" class="secondary-title">Mi mejor entrenamiento <i
+                  class="fa-solid fa-ranking-star"></i></h2>
+
+            <p id="msg-best-training" class="msg"></p>
+            <div id="best-training-list"></div>
+            <button id="btn-best-training-back" class="btn">Volver</button>
+         </div>
+         <div id="total-km-container" class="trainings hidden">
+            <h2 id="total-km-secondary-title" class="secondary-title">Total de kilómetros recorridos <i
+                  class="fa-solid fa-square-poll-vertical"></i></h2>
+
+            <div id="total-km-list"></div>
+            <button id="btn-total-km-back" class="btn">Volver</button>
+         </div>
+         <div id="profile-container" class="trainings hidden">
+            <h2 id="profile-secondary-title" class="secondary-title">Mis datos personales <i
+                  class="fa-solid fa-user-astronaut"></i></h2>
+
+            <div id="profile-list"></div>
+            <button id="btn-profile-back" class="btn">Volver</button>
+         </div>
+      </div>
+   </main>
+   <div id="modal-delete" class="modal-delete hidden">
+      <div class="modal-card">
+         <p>¿Estás seguro que deseas borrar tus datos? <span style="color: red;">Esta acción es irreversible</span>
+         </p>
+         <div class="modal-buttons">
+            <button id="modal-btn-confirm" class="btn">Confirmar</button>
+            <button id="modal-btn-cancel" class="btn">Cancelar</button>
+         </div>
+      </div>
+   </div>
+   <div id="modal-new-tr" class="modal-new-tr hidden">
+      <div class="modal-card">
+         <p class="str">Tu nuevo registro de entrenamiento:</p>
+         <div class="modal-buttons">
+            <div class="div">
+               <div id="modal-content"></div>
+               <button id="modal-btn-confirm-tr" class="btn">Confirmar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="https://kit.fontawesome.com/c511f66b50.js" crossorigin="anonymous"></script>
+   <script type="module" src="./js/main.js"></script>
+
+</body>
+
+</html>
